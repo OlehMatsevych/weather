@@ -1,4 +1,4 @@
-#Weather app with animations
+# Weather app with animations
 ![screenshoot](/screenshot.PNG)
 
 
