@@ -1,3 +1,7 @@
+#Weather app with animations
+![screenshoot](/screenshot.PNG)
+
+
 # FirstTestApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.1.
