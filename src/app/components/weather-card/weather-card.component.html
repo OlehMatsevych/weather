@@ -1,0 +1,115 @@
+
+<div class="canvas"></div>
+
+<app-header (data)='getData($event)'> </app-header>   
+<div class="container">
+  <div class="card-holder">
+    <div class = 'weather-card card '>
+      <div class="london ">
+        <div class="card__text card__side card__side--front">
+          <div class="weather-icon cloud"></div>
+          <h3 >14º</h3>
+          <h4>London</h4>
+        </div>
+          
+      </div>
+      <div class="card__text card__side card__side--back">
+        <div class="">
+          Back
+        </div>
+      </div>
+    </div>  
+  </div>
+
+  <div class="card-holder">
+    <div class = 'weather-card card '>
+      <div class="madrid ">
+        <div class="card__text card__side card__side--front">
+          <div class="weather-icon sun"></div>
+            <h3>26º</h3>
+            <h4>Madrid</h4>
+          
+        </div>
+          
+      </div>
+      <div class="card__text card__side card__side--back">
+        <div class="">
+          Back
+        </div>
+      </div>
+    </div>  
+  </div>
+
+
+  <div class="card-holder">
+    <div class = 'weather-card card '>
+      <div class="">
+        <div class="card__text card__side card__side--front">
+            <img class='weather-icon' width="500" height="600" [src]= imgUrl/>
+            <h3>{{currentTemperature}}º</h3>
+            <h4 class="center" *ngIf='resultFound()'>{{data.city.name}}</h4>
+          
+        </div>
+          
+      </div>
+      <div class="card__text card__side card__side--back">
+        <div>
+          <table class='step' *ngIf='resultFound()'>          
+          <tbody>
+            <tr>
+              <td>
+                <h6>Current Temperature:</h6>
+              </td>
+              <td>
+                <h6>{{currentTemperature}}<sup>o</sup>C</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Feels like:</h6>
+              </td>
+              <td>
+                <h6>{{feelsLikeTemperature}}<sup>o</sup>C</h6>
+              </td>
+            </tr>
+
+            <tr>
+              <td>
+                <h6>Minimum Temperature:</h6>
+              </td>
+              <td>
+                <h6>{{data.list[0].main?.temp_min - 273.15 | number:'1.0-0'}}<sup>o</sup>C</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Humidity</h6>
+              </td>
+              <td>
+                <h6>{{data.list[0].main?.humidity}}%</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Pressure</h6>
+              </td>
+              <td>
+                <h6>{{data.list[0].main?.pressure}}mb</h6>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <h6>Visibility</h6>
+              </td>
+              <td>
+                <h6>{{data.list[0].visibility}}m</h6>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        </div>
+      </div>
+    </div>  
+  </div>
+
+</div>
